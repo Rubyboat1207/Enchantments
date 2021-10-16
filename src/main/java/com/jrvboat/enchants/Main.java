@@ -39,6 +39,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "experience"),
 			new Experience()
 	);
+	private static Enchantment LUNAR = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "remedy"),
+			new remedy()
+	);
 	//private static Enchantment FREEZING = Registry.register(
 	//		Registry.ENCHANTMENT,
 	//		new Identifier(ModID, "freezing"),
