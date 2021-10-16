@@ -24,9 +24,13 @@ public class Withering extends Enchantment {
         return this.getMinPower(level) + 50;
     }
     @Override
+    public int getMaxLevel() {
+        return 3;
+    }
+    @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * level, level -1));
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * (level + 1), level -1));
         }
     }
 
