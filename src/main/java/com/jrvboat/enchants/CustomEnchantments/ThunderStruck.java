@@ -3,6 +3,8 @@ package com.jrvboat.enchants.CustomEnchantments;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.MendingEnchantment;
+import net.minecraft.enchantment.ThornsEnchantment;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
@@ -12,7 +14,7 @@ public class ThunderStruck extends Enchantment {
 
 
     public ThunderStruck() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.FEET});
+        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.LEGS});
     }
 
     @Override
@@ -35,6 +37,11 @@ public class ThunderStruck extends Enchantment {
             entity.damage(DamageSource.LIGHTNING_BOLT, 2); //damages entity because lightning doesnt do damage
             entity.setFireTicks(60); //sets entity on fire for 3 seconds
         }
+
+    }
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return other instanceof ThornsEnchantment ? false : super.canAccept(other);
     }
 
 }

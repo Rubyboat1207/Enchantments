@@ -2,6 +2,8 @@ package com.jrvboat.enchants.CustomEnchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.MendingEnchantment;
+import net.minecraft.enchantment.ThornsEnchantment;
 import net.minecraft.entity.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -26,5 +28,9 @@ public class Experience extends Enchantment {
 
 
         }
+    }
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return other instanceof MendingEnchantment ? false : super.canAccept(other);
     }
 }

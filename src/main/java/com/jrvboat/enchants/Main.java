@@ -44,6 +44,11 @@ public class Main implements ModInitializer {
 	//		new Identifier(ModID, "freezing"),
 	//		new Freezing()
 	//);
+	private static Enchantment MARTYRDOM = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "martyrdom"),
+			new Martyrdom()
+	);
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
