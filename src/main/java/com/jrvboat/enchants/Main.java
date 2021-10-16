@@ -4,10 +4,9 @@ import com.jrvboat.enchants.CustomEnchantments.Withering;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import net.minecraft.util.registry.Registry;
 
 public class Main implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
