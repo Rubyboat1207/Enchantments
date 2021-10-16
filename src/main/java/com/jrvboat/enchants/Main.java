@@ -1,6 +1,7 @@
 package com.jrvboat.enchants;
 
 import com.jrvboat.enchants.CustomEnchantments.Freezing;
+import com.jrvboat.enchants.CustomEnchantments.Gilded;
 import com.jrvboat.enchants.CustomEnchantments.Withering;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
@@ -20,11 +21,16 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "withering"),
 			new Withering()
 	);
-	private static Enchantment FREEZING = Registry.register(
+	private static Enchantment Gilded = Registry.register(
 			Registry.ENCHANTMENT,
-			new Identifier(ModID, "freezing"),
-			new Freezing()
+			new Identifier(ModID, "gilded"),
+			new Gilded()
 	);
+	//private static Enchantment FREEZING = Registry.register(
+	//		Registry.ENCHANTMENT,
+	//		new Identifier(ModID, "freezing"),
+	//		new Freezing()
+	//);
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
