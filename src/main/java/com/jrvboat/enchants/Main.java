@@ -1,9 +1,6 @@
 package com.jrvboat.enchants;
 
-import com.jrvboat.enchants.CustomEnchantments.Freezing;
-import com.jrvboat.enchants.CustomEnchantments.Gilded;
-import com.jrvboat.enchants.CustomEnchantments.ThunderStruck;
-import com.jrvboat.enchants.CustomEnchantments.Withering;
+import com.jrvboat.enchants.CustomEnchantments.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
@@ -36,6 +33,11 @@ public class Main implements ModInitializer {
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "thunderstruck"),
 			new ThunderStruck()
+	);
+	private static Enchantment EXPERIENCE = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "experience"),
+			new Experience()
 	);
 	//private static Enchantment FREEZING = Registry.register(
 	//		Registry.ENCHANTMENT,

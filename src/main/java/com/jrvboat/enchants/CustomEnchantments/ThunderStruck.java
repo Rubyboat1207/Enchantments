@@ -25,15 +25,16 @@ public class ThunderStruck extends Enchantment {
     public void onUserDamaged(LivingEntity user, Entity target, int level) {
 
         ServerWorld serverWorld = (ServerWorld) target.getEntityWorld();
-        LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(serverWorld);
-        LivingEntity entity = (LivingEntity) target;
-        lightningEntity.refreshPositionAfterTeleport(target.getX(), target.getY(), target.getZ());
-        lightningEntity.setCosmetic(true);
+        LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(serverWorld); //creates lightning
+        LivingEntity entity = (LivingEntity) target; //defines entity
+        lightningEntity.refreshPositionAfterTeleport(target.getX(), target.getY(), target.getZ()); //gets lightning postion at target postion
+        lightningEntity.setCosmetic(true); //makes lightning cosmetic (no damage just lightning bolt)
 
         if (target instanceof LivingEntity) {
-            serverWorld.spawnEntity(lightningEntity);
-            entity.damage(DamageSource.LIGHTNING_BOLT, 2);
-            entity.setFireTicks(60);
+            serverWorld.spawnEntity(lightningEntity); //spawns lightning bolt
+            entity.damage(DamageSource.LIGHTNING_BOLT, 2); //damages entity because lightning doesnt do damage
+            entity.setFireTicks(60); //sets entity on fire for 3 seconds
         }
     }
+
 }
