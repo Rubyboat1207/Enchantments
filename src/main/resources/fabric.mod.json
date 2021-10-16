@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "rbench",
   "version": "${version}",
 
   "name": "Enchants Mod",
