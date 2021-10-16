@@ -1,6 +1,7 @@
 package com.jrvboat.enchants;
 
 import com.jrvboat.enchants.CustomEnchantments.Freezing;
+import com.jrvboat.enchants.CustomEnchantments.ThunderStruck;
 import com.jrvboat.enchants.CustomEnchantments.Withering;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
@@ -24,6 +25,11 @@ public class Main implements ModInitializer {
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "freezing"),
 			new Freezing()
+	);
+	private static Enchantment THUNDERSTRUCK = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "thunderstruck"),
+			new ThunderStruck()
 	);
 	@Override
 	public void onInitialize() {
