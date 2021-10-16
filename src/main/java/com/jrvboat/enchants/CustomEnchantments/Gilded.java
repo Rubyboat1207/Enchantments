@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 
@@ -32,22 +33,25 @@ public class Gilded extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+
         if(target instanceof LivingEntity)
         {
             if(((LivingEntity) target).isDead())
             {
-                ServerWorld world = (ServerWorld) user.getEntityWorld();
-                if(user instanceof PlayerEntity)
+                if(user instanceof ServerPlayerEntity)
                 {
                     PlayerEntity player = (PlayerEntity) user;
-                    //player.sendMessage(Text.of(player.getInventory().getMainHandStack()));
-                    player.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET, level));
-                }else
-                {
-                    ItemEntity itemEntity = new ItemEntity(world, user.getX(),user.getY(), user.getZ(), new ItemStack(Items.GOLD_NUGGET, level));
-                    world.spawnEntity(itemEntity);
+                    ServerWorld world = (ServerWorld) user.getEntityWorld();
+                    if(user instanceof PlayerEntity)
+                    {
+                        //player.sendMessage(Text.of(player.getInventory().getMainHandStack()));
+                        player.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET, level));
+                    }else
+                    {
+                        ItemEntity itemEntity = new ItemEntity(world, user.getX(),user.getY(), user.getZ(), new ItemStack(Items.GOLD_NUGGET, level));
+                        world.spawnEntity(itemEntity);
+                    }
                 }
-
             }
         }
 

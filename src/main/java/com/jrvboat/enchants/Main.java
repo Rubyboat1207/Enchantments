@@ -44,6 +44,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "remedy"),
 			new remedy()
 	);
+	private static Enchantment HOTHEADED = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "hot_headed"),
+			new HotHeaded()
+	);
 	//private static Enchantment FREEZING = Registry.register(
 	//		Registry.ENCHANTMENT,
 	//		new Identifier(ModID, "freezing"),
