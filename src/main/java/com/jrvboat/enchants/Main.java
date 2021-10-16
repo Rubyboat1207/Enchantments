@@ -1,5 +1,6 @@
 package com.jrvboat.enchants;
 
+import com.jrvboat.enchants.CustomEnchantments.Freezing;
 import com.jrvboat.enchants.CustomEnchantments.Withering;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
@@ -18,6 +19,11 @@ public class Main implements ModInitializer {
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "withering"),
 			new Withering()
+	);
+	private static Enchantment FREEZING = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "freezing"),
+			new Freezing()
 	);
 	@Override
 	public void onInitialize() {
