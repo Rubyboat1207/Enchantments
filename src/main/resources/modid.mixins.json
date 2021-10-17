@@ -1,9 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.jrvboat.enchants.mixin",
+  "package": "com.jrvboat.enchants.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "MilkMixin",
+    "MushroomStewMixin"
   ],
   "client": [
   ],

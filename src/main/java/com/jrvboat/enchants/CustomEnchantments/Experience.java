@@ -31,6 +31,6 @@ public class Experience extends Enchantment {
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        return other instanceof MendingEnchantment ? false : super.canAccept(other);
+        return !(other instanceof MendingEnchantment) && super.canAccept(other);
     }
 }

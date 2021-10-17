@@ -34,27 +34,20 @@ public class Gilded extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
 
-        if(target instanceof LivingEntity)
-        {
-            if(((LivingEntity) target).isDead())
-            {
-                if(user instanceof ServerPlayerEntity)
-                {
+        if (target instanceof LivingEntity) {
+            if (((LivingEntity) target).isDead()) {
+                ServerWorld world = (ServerWorld) user.getEntityWorld();
+                if (user instanceof PlayerEntity) {
                     PlayerEntity player = (PlayerEntity) user;
-                    ServerWorld world = (ServerWorld) user.getEntityWorld();
-                    if(user instanceof PlayerEntity)
-                    {
-                        //player.sendMessage(Text.of(player.getInventory().getMainHandStack()));
-                        player.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET, level));
-                    }else
-                    {
-                        ItemEntity itemEntity = new ItemEntity(world, user.getX(),user.getY(), user.getZ(), new ItemStack(Items.GOLD_NUGGET, level));
-                        world.spawnEntity(itemEntity);
-                    }
+                    //player.sendMessage(Text.of(player.getInventory().getMainHandStack()));
+                    player.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET, level));
+                } else {
+
+                    ItemEntity itemEntity = new ItemEntity(world, user.getX(), user.getY(), user.getZ(), new ItemStack(Items.GOLD_NUGGET, level * 2));
+                    world.spawnEntity(itemEntity);
                 }
             }
+            super.onTargetDamaged(user, target, level);
         }
-
-        super.onTargetDamaged(user, target, level);
     }
 }

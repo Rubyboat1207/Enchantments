@@ -3,6 +3,7 @@ package com.jrvboat.enchants;
 import com.jrvboat.enchants.CustomEnchantments.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -59,12 +60,17 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "martyrdom"),
 			new Martyrdom()
 	);
+	public static Enchantment BOTTOMLESS = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "bottomless"),
+			new Bottomless()
+	);
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
 		LOGGER.info("Hello Fabric world!");
 	}
 }
