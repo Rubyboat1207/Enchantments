@@ -65,6 +65,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "bottomless"),
 			new Bottomless()
 	);
+	public static Enchantment WATERWALKER = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "waterwalker"),
+			new WaterWalker()
+	);
 
 	@Override
 	public void onInitialize() {
