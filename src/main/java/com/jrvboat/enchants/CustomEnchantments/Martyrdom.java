@@ -35,14 +35,16 @@ public class Martyrdom extends Enchantment {
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity target, int level) {
-        ServerWorld serverWorld = (ServerWorld) target.getEntityWorld();
+
+    }
+
+    public static void onPlayerDeath(LivingEntity user)
+    {
+        ServerWorld serverWorld = (ServerWorld) user.getEntityWorld();
         TntEntity tntEntity = new TntEntity(serverWorld, user.getX(), user.getY(), user.getZ(), user);
-        if(user.getHealth() <= 2) {
-            for(int i = 0; i < 5; i++){
-                PlayerEntity playerEntity = (PlayerEntity) user;
-                playerEntity.sendMessage(Text.of("KABOOM"), false);
-                serverWorld.spawnEntity(tntEntity);
-            }
-        }
+        PlayerEntity playerEntity = (PlayerEntity) user;
+        playerEntity.sendMessage(Text.of("KABOOM"), false);
+        tntEntity.setFuse(10);
+        serverWorld.spawnEntity(tntEntity);
     }
 }

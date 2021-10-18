@@ -1,7 +1,14 @@
 package com.jrvboat.enchants;
 
 import com.jrvboat.enchants.CustomEnchantments.*;
+import com.jrvboat.enchants.blocks.EnrichingStation;
+import com.jrvboat.enchants.blocks.EnrichingStationEntity;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.block.Material;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -55,7 +62,7 @@ public class Main implements ModInitializer {
 	//		new Identifier(ModID, "freezing"),
 	//		new Freezing()
 	//);
-	private static Enchantment MARTYRDOM = Registry.register(
+	public static Enchantment MARTYRDOM = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "martyrdom"),
 			new Martyrdom()
@@ -76,11 +83,12 @@ public class Main implements ModInitializer {
 			new Lunar()
 	);
 
+	public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
+	public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
 		LOGGER.info("Hello Fabric world!");
+		BlockHelper.BlockFactory("enriching_station", ENRICHING_STATION, new FabricItemSettings().group(ItemGroup.DECORATIONS));
+		ENRICHING_STATION_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModID, "quiver"), FabricBlockEntityTypeBuilder.create(EnrichingStationEntity::new, ENRICHING_STATION).build(null));
 	}
 }
