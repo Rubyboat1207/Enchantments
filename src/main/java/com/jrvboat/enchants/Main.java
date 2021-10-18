@@ -74,11 +74,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "bottomless"),
 			new Bottomless()
 	);
-	public static Enchantment WATERWALKER = Registry.register(
-			Registry.ENCHANTMENT,
-			new Identifier(ModID, "waterwalker"),
-			new WaterWalker()
-	);
+	//public static Enchantment WATERWALKER = Registry.register(
+			//Registry.ENCHANTMENT,
+			//new Identifier(ModID, "waterwalker"),
+			//new WaterWalker()
+	//);
 	public static Enchantment LUNAR = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "lunar"),
@@ -89,7 +89,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "enchant_table_on_a_stick"),
 			new EnchantTable(new FabricItemSettings().maxCount(1))
 	);
-
+	public static Enchantment VEXPROTECTIONG = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "vexprotection"),
+			new VexProtection()
+	);
 	public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
 	public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
 	@Override
