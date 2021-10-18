@@ -40,7 +40,7 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "experience"),
 			new Experience()
 	);
-	private static Enchantment LUNAR = Registry.register(
+	private static Enchantment REMEDY = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "remedy"),
 			new remedy()
@@ -69,6 +69,11 @@ public class Main implements ModInitializer {
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "waterwalker"),
 			new WaterWalker()
+	);
+	public static Enchantment LUNAR = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "lunar"),
+			new Lunar()
 	);
 
 	@Override
