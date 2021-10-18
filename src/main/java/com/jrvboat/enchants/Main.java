@@ -59,11 +59,6 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "hot_headed"),
 			new HotHeaded()
 	);
-	//private static Enchantment FREEZING = Registry.register(
-	//		Registry.ENCHANTMENT,
-	//		new Identifier(ModID, "freezing"),
-	//		new Freezing()
-	//);
 	public static Enchantment MARTYRDOM = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "martyrdom"),
@@ -94,12 +89,12 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "vexprotection"),
 			new VexProtection()
 	);
-	public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
-	public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
+	//public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
+	//public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
-		BlockHelper.BlockFactory("enriching_station", ENRICHING_STATION, new FabricItemSettings().group(ItemGroup.DECORATIONS));
-		ENRICHING_STATION_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModID, "quiver"), FabricBlockEntityTypeBuilder.create(EnrichingStationEntity::new, ENRICHING_STATION).build(null));
+		//BlockHelper.BlockFactory("enriching_station", ENRICHING_STATION, new FabricItemSettings().group(ItemGroup.DECORATIONS));
+		//ENRICHING_STATION_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModID, "quiver"), FabricBlockEntityTypeBuilder.create(EnrichingStationEntity::new, ENRICHING_STATION).build(null));
 	}
 }
