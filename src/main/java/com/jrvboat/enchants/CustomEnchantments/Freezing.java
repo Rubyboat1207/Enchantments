@@ -30,13 +30,24 @@ public class Freezing extends Enchantment {
     }
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 2;
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) target;
-            entity.setInPowderSnow(true);
+            int frozentime = 0;
+            if(entity.getFrozenTicks() > 100)
+            {
+                frozentime = 120 * level;
+            }else if(entity.getFrozenTicks() < 100)
+            {
+                frozentime = 100 * level;
+            }else
+            {
+                frozentime = 0;
+            }
+            entity.setFrozenTicks(entity.getFrozenTicks() + frozentime);
         }
     }
 }

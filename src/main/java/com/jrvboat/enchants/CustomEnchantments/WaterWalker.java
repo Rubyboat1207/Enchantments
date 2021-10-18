@@ -16,11 +16,4 @@ public class WaterWalker extends Enchantment {
     public int getMinPower(int level){return 1;}
     @Override
     public int getMaxLevel(){ return 3;}
-    @Override
-    public void tick(CallbackInfo ci){
-        public boolean canWalkOnFluid(Fluid EntityType<T> fluid;
-        fluid) {
-            return fluid.isIn(FluidTags.WATER);
-        }
-    }
 }

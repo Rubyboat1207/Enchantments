@@ -41,7 +41,7 @@ public class ThunderStruck extends Enchantment {
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        return other instanceof ThornsEnchantment ? false : super.canAccept(other);
+        return !(other instanceof ThornsEnchantment) && !(other instanceof HotHeaded) && super.canAccept(other);
     }
 
 }

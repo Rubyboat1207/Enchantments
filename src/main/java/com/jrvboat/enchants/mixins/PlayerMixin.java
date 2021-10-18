@@ -38,16 +38,4 @@ public abstract class PlayerMixin {
             player.setNoGravity(false);
         }
     }
-
-
-
-    @Inject(at = @At("HEAD"), method = "onDeath")
-    public void onDeath(DamageSource source, CallbackInfo ci)
-    {
-        ((PlayerEntity)(Object)this).sendMessage(Text.of("Test"), false);
-        if(EnchantmentHelper.getLevel(Main.MARTYRDOM, ((PlayerEntity)(Object)this).getInventory().getArmorStack(2)) != 0)
-        {
-            Martyrdom.onPlayerDeath(((PlayerEntity)(Object)this));
-        }
-    }
 }

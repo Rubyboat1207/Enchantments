@@ -8,7 +8,8 @@
     "MushroomStewMixin",
     "SuspiciousStewMixin",
     "PlayerMixin",
-    "DeathMixin"
+    "DeathMixin",
+    "LivingEntityMixin"
   ],
   "client": [
   ],

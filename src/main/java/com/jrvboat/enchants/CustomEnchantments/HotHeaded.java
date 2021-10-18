@@ -23,7 +23,7 @@ public class HotHeaded extends Enchantment {
         return 3;
     }
     @Override
-    public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+    public void onUserDamaged(LivingEntity user, Entity target, int level) {
         LivingEntity livingEntity = (LivingEntity) target;
         livingEntity.setFireTicks(level * 20 * 2);
     }

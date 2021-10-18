@@ -38,7 +38,7 @@ public class Martyrdom extends Enchantment {
 
     }
 
-    public static void onPlayerDeath(LivingEntity user)
+    public static void onUserDeath(LivingEntity user)
     {
         ServerWorld serverWorld = (ServerWorld) user.getEntityWorld();
         TntEntity tntEntity = new TntEntity(serverWorld, user.getX(), user.getY(), user.getZ(), user);

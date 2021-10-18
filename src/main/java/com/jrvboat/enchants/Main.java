@@ -3,6 +3,7 @@ package com.jrvboat.enchants;
 import com.jrvboat.enchants.CustomEnchantments.*;
 import com.jrvboat.enchants.blocks.EnrichingStation;
 import com.jrvboat.enchants.blocks.EnrichingStationEntity;
+import com.jrvboat.enchants.items.EnchantTable;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -10,6 +11,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -27,11 +29,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "withering"),
 			new Withering()
 	);
-	//private static Enchantment FREEZING = Registry.register(
-	//		Registry.ENCHANTMENT,
-	//		new Identifier(ModID, "freezing"),
-	//		new Freezing()
-	//);
+	private static Enchantment FREEZING = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "freezing"),
+			new Freezing()
+	);
 	private static Enchantment Gilded = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "gilded"),
@@ -81,6 +83,11 @@ public class Main implements ModInitializer {
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "lunar"),
 			new Lunar()
+	);
+	public static Item ENCHANTMENT_TABLE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ModID, "enchant_table_on_a_stick"),
+			new EnchantTable(new FabricItemSettings().maxCount(1))
 	);
 
 	public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
