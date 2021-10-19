@@ -1,7 +1,6 @@
 package com.jrvboat.enchants;
 
 import com.jrvboat.enchants.CustomEnchantments.*;
-import com.jrvboat.enchants.blocks.EnrichingStation;
 import com.jrvboat.enchants.blocks.EnrichingStationEntity;
 import com.jrvboat.enchants.items.EnchantTable;
 import net.fabricmc.api.ModInitializer;

@@ -29,8 +29,8 @@ public class VexProtection extends Enchantment {
                 LivingEntity livingEntity = (LivingEntity) EntityType.VEX.create(serverWorld);
                 livingEntity.setPos(target.getX(),target.getY(),target.getZ());
                 serverWorld.spawnEntity(livingEntity);
-                PlayerEntity playerEntity = (PlayerEntity) user;
-                playerEntity.sendMessage(Text.of("KABOOM"), false);
+                //PlayerEntity playerEntity = (PlayerEntity) user;
+                //playerEntity.sendMessage(Text.of("KABOOM"), false);
             }
         }
     }

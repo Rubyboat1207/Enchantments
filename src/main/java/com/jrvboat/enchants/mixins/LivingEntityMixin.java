@@ -1,7 +1,10 @@
 package com.jrvboat.enchants.mixins;
 
 import com.jrvboat.enchants.CustomEnchantments.Martyrdom;
+import com.jrvboat.enchants.Main;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,7 +17,14 @@ public abstract class LivingEntityMixin {
     {
         if(((LivingEntity)(Object)this).deathTime == 19)
         {
-            Martyrdom.onUserDeath(((LivingEntity)(Object)this));
+            if(((LivingEntity)(Object)this).isPlayer())
+            {
+                PlayerEntity pl = ((PlayerEntity)(Object)this);
+                if(EnchantmentHelper.getLevel(Main.MARTYRDOM, ((PlayerEntity)(Object)this).getInventory().getArmorStack(2)) != 0)
+                {
+                    Martyrdom.onUserDeath(((LivingEntity)(Object)this));
+                }
+            }
         }
     }
 }
