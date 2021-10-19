@@ -42,8 +42,11 @@ public class Martyrdom extends Enchantment {
     {
         ServerWorld serverWorld = (ServerWorld) user.getEntityWorld();
         TntEntity tntEntity = new TntEntity(serverWorld, user.getX(), user.getY(), user.getZ(), user);
-        PlayerEntity playerEntity = (PlayerEntity) user;
-        playerEntity.sendMessage(Text.of("KABOOM"), false);
+        if(user instanceof PlayerEntity)
+        {
+            PlayerEntity playerEntity = (PlayerEntity) user;
+            playerEntity.sendMessage(Text.of("KABOOM"), false);
+        }
         tntEntity.setFuse(10);
         serverWorld.spawnEntity(tntEntity);
     }
