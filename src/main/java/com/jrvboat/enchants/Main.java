@@ -1,7 +1,6 @@
 package com.jrvboat.enchants;
 
 import com.jrvboat.enchants.CustomEnchantments.*;
-import com.jrvboat.enchants.blocks.EnrichingStation;
 import com.jrvboat.enchants.blocks.EnrichingStationEntity;
 import com.jrvboat.enchants.items.EnchantTable;
 import net.fabricmc.api.ModInitializer;
@@ -59,11 +58,6 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "hot_headed"),
 			new HotHeaded()
 	);
-	//private static Enchantment FREEZING = Registry.register(
-	//		Registry.ENCHANTMENT,
-	//		new Identifier(ModID, "freezing"),
-	//		new Freezing()
-	//);
 	public static Enchantment MARTYRDOM = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "martyrdom"),
@@ -74,11 +68,11 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "bottomless"),
 			new Bottomless()
 	);
-	public static Enchantment WATERWALKER = Registry.register(
-			Registry.ENCHANTMENT,
-			new Identifier(ModID, "waterwalker"),
-			new WaterWalker()
-	);
+	//public static Enchantment WATERWALKER = Registry.register(
+			//Registry.ENCHANTMENT,
+			//new Identifier(ModID, "waterwalker"),
+			//new WaterWalker()
+	//);
 	public static Enchantment LUNAR = Registry.register(
 			Registry.ENCHANTMENT,
 			new Identifier(ModID, "lunar"),
@@ -89,13 +83,17 @@ public class Main implements ModInitializer {
 			new Identifier(ModID, "enchant_table_on_a_stick"),
 			new EnchantTable(new FabricItemSettings().maxCount(1))
 	);
-
-	public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
-	public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
+	public static Enchantment VEXPROTECTIONG = Registry.register(
+			Registry.ENCHANTMENT,
+			new Identifier(ModID, "vexprotection"),
+			new VexProtection()
+	);
+	//public static BlockEntityType<EnrichingStationEntity> ENRICHING_STATION_ENTITY;
+	//public static EnrichingStation ENRICHING_STATION = new EnrichingStation(FabricBlockSettings.of(Material.WOOL));
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
-		BlockHelper.BlockFactory("enriching_station", ENRICHING_STATION, new FabricItemSettings().group(ItemGroup.DECORATIONS));
-		ENRICHING_STATION_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModID, "quiver"), FabricBlockEntityTypeBuilder.create(EnrichingStationEntity::new, ENRICHING_STATION).build(null));
+		//BlockHelper.BlockFactory("enriching_station", ENRICHING_STATION, new FabricItemSettings().group(ItemGroup.DECORATIONS));
+		//ENRICHING_STATION_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModID, "quiver"), FabricBlockEntityTypeBuilder.create(EnrichingStationEntity::new, ENRICHING_STATION).build(null));
 	}
 }
