@@ -2,6 +2,7 @@ package com.jrvboat.enchants.CustomEnchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.ThornsEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -26,5 +27,9 @@ public class HotHeaded extends Enchantment {
     public void onUserDamaged(LivingEntity user, Entity target, int level) {
         LivingEntity livingEntity = (LivingEntity) target;
         livingEntity.setFireTicks(level * 20 * 2);
+    }
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return !(other instanceof ThornsEnchantment) && !(other instanceof ThunderStruck) && super.canAccept(other);
     }
 }

@@ -49,10 +49,7 @@ public abstract class PowderSnowMixin{
                 {
                     if (randomnumber < 90)
                     {
-                        if(player instanceof ServerPlayerEntity)
-                        {
-                            player.setStackInHand(hand, stack);
-                        }
+                        player.setStackInHand(hand, stack);
                         if (!world.isClient) {
                             player.clearStatusEffects();
                         }
