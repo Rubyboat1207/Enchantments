@@ -4,11 +4,11 @@
   "package": "com.jrvboat.enchants.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "LivingEntityMixin",
     "MilkMixin",
     "MushroomStewMixin",
-    "SuspiciousStewMixin",
     "PlayerMixin",
-    "LivingEntityMixin"
+    "SuspiciousStewMixin"
   ],
   "client": [
   ],
